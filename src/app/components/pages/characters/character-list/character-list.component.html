@@ -1,38 +1,27 @@
 <!-- <p>character-list works!</p> -->
 
-<div class="row"
-style="
-display: grid;
-grid-gap: 1rem;
-/* grid-template-columns: 200px 200px 200px; */
-/* grid-template-columns: repeat(auto-fit, 200px); */
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-/* grid-template-rows: 150px 150px; */">
+<div class="row-container-character-list">
   <!-- ALL characters -->
   <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
-    <div class="card" style="margin: 2em;">
-      <div class="image">
-        <a [routerLink]="['/character-details', character.id]">
-          <img
-          [src]="character.image"
-          [alt]="character.name"
-          class="card-image-top"
-          />
-        </a>
-      </div>
-      <div class="card-inner">
-        <div class="header">
-          <a [routerLink]="['/character-details', character.id]">
-            <h2>{{character.name}}</h2>
-          </a>
-          <h4 class="text-muted">{{ character.gender }}</h4>
-          <small class="text-muted">{{ character.created | date }}</small>
+    <div class="card">
+      <a [routerLink]="['/character-details', character.id]">
+        <div class="container-title-card">
+          <h2 style="color: white!important;">{{character.name}}</h2>
         </div>
-      </div>
+
+        <div class="image">
+          <img [src]="character.image" [alt]="character.name" class="card-image-top" />
+        </div>
+
+        <div class="card-inner">
+          <div class="header">
+            <h4 class="text-muted">{{ character.gender }}</h4>
+            <small class="text-muted">{{ character.created | date }}</small>
+          </div>
+        </div>
+      </a>
     </div>
-
   </div>
-
   <div class="col-xs-12 col-sm-12 col-md-5 container-notFound" *ngIf="characters.length < 1">
     <p>No results...</p>
   </div>

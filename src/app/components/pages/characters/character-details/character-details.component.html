@@ -2,8 +2,11 @@
 
 <div class="row" *ngIf="character$ | async as character">
   <!-- ALL characters -->
-  <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="card" style="margin: 2em;">
+  <div class="col-xs-12 col-sm-6 col-md-4 justifity-content-center">
+    <div class="card">
+      <div class="container-title-card" >
+      <h2>{{character.name}}</h2>
+      </div>
       <div class="image">
           <img
           [src]="character.image"
@@ -13,7 +16,6 @@
       </div>
       <div class="card-inner">
         <div class="header">
-            <h2>{{character.name}}</h2>
           <h4 class="text-muted">{{ character.gender }}</h4>
           <small class="text-muted">{{ character.created | date }}</small>
         </div>

@@ -5,17 +5,30 @@
 }
 
 .card {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
   box-sizing: border-box;
   margin: 10px 0;
   background-color: #fff;
   max-width: 529px;
   transition: all 0.2 ease-in-out;
+  margin: 0em;
+  min-height: 32rem;
+  height: auto;
+  max-height: 100%;
+  /* glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card:hover{
   box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.24);
   cursor: pointer;
+  width: 105%;
 }
 
 img {
@@ -31,7 +44,7 @@ img:hover {
 .card-inner {
   padding: 10px;
 }
-
+/* estilos propios */
 body {
   /* background-image: url('/assets/images/fondo-pantalla-abstracto-nebulosa-ultra-detallado-4.jpg') !important; */
   background-image: url('/assets/images/south-pole-wall-pared-galaxias-tamano-anos-luz.webp') !important;
@@ -46,21 +59,74 @@ body {
   background-position: 10px 30px; */
 }
 
-#image-title-rick-and-morty{
+.image-title-rick-and-morty{
+ width: 80%;
+ height: 20em;
+}
 
+.text-center{
+  text-align: center;
+}
+
+.justifity-content-center{
+    display: flex;
+    justify-content: center;
+}
+
+.row-container-character-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/*.container-character-details{
+  display: flex;
+  justify-content: center;
+}*/
+
+.container-title-card{
+  text-align: center;
+  background: rgba(8, 12, 240, 0.473);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px 16px 0px 0px;
 }
 
 
 
-@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800,900");
+
+/* estilos menu */
+/* @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800,900"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap'); */
+
 html, body {
   height: 100%;
 }
 
 body {
   background: beige;
-  font-family: Alegreya Sans, sans-serif;
+  /* font-family: Alegreya Sans, sans-serif; */
+  /* font-family: Bangers, sans-serif; */
+   /* font-family: 'Open Sans', sans-serif; */
+   /* font-family: Gloria Hallelujah, cursive!important; */
 }
+
+h2{
+  /* font-family: 'Bangers', cursive!important; */
+  /* font-family: 'Gloria Hallelujah', cursive; */
+  /* font-family: 'Gloria Hallelujah'; */
+  /* font-family: Gloria Hallelujah, cursive!important; */
+}
+
+/* *{
+  font-family: 'Tektur';
+} */
+
+a:link { text-decoration:none; } a:visited { text-decoration:none; }
 
 nav {
   display: block;

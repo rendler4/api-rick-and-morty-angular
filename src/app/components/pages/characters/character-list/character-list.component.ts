@@ -63,13 +63,15 @@ export class CharacterListComponent implements OnInit {
         .pipe(take(1))
         .subscribe((res: any) => {
           console.log('Response->', res);
+
+          this.characters = [];
+
           if(res?.results?.length){
           const { info, results } = res;
           this.characters = [ ...this.characters , ...results ]
           this.info = info;
-          }else{
-            this.characters = [];
           }
+
         })
   }
 
