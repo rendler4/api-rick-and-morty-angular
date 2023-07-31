@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   autofocus
   type="text"
   class = 'form-control-lg'
-  placeholder="Search..."
+  placeholder="Buscar..."
   (input)="onSearch(inputSearch.value)"
   >`,
   //styleUrls: ['./form-search.component.css']
-  styles: ['input {width: 50%}']
+  styles: ['input {width: 50%; border-radius: 15px}']
 })
 export class FormSearchComponent implements OnInit {
 

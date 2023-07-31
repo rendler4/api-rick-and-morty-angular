@@ -12,7 +12,8 @@ export class CharacterService {
 
   searchCharacters(query = '', page=1 ){
     //return this.http.get<Character[]>(`${environment.baseUrlAPI}/?name=${query}&page=${page}`);
-    return this.http.get<Character[]>(`https://rickandmortyapi.com/api/character/?name=${query}&page=${page}`);
+    const name_campo:string = 'name';
+    return this.http.get<Character[]>(`https://rickandmortyapi.com/api/character/?${name_campo}=${query}&page=${page}`);
   }
 
   getDetails(id: number){

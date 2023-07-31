@@ -22,6 +22,7 @@
     "@lottiefiles/lottie-player": "^2.0.2",
     "lottie-web": "^5.12.2",
     "ngx-lottie": "^7.1.0",
+    "ngx-pagination": "^6.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { FormSearchComponent } from './components/partials/form-search/form-search.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 // Add these two
 import { SplashScreenComponent } from './components/shared/splash-screen/splash-screen/splash-screen.component';
 import { LottieModule } from 'ngx-lottie';
@@ -35,6 +37,7 @@ export function playerFactory() {
     AppRoutingModule,
     HttpClientModule,
     LottieModule.forRoot({ player: playerFactory }),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

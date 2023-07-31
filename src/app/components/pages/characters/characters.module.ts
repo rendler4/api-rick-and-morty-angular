@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { CharacterListComponent } from './character-list/character-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 const myComponents = [CharacterDetailsComponent, CharacterListComponent];
 @NgModule({
@@ -11,7 +13,8 @@ const myComponents = [CharacterDetailsComponent, CharacterListComponent];
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   exports: [
     ...myComponents

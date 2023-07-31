@@ -73,16 +73,46 @@ body {
     justify-content: center;
 }
 
+ul {
+  justify-content: center;
+  display: flex;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style-type: none;
+}
+
+.current{
+  background-color: #fff;
+}
+
+ul>li{
+  cursor: pointer;
+  /* text-decoration:underline; */
+  color: #ff7a39;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pagination-options-xtreme{
+  background: rgba(248, 2, 117, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .row-container-character-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-/*.container-character-details{
-  display: flex;
-  justify-content: center;
-}*/
 
 .container-title-card{
   text-align: center;
@@ -94,7 +124,36 @@ body {
   border-radius: 16px 16px 0px 0px;
 }
 
+/* Paginate */
+.ngx-pagination{
+  /* background: white; */
+  /* text-align: center;
+  background: rgba(8, 12, 240, 0.473);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px 16px 0px 0px; */
+}
 
+li:hover{
+  /* background-color: white; */
+  background: rgba(0, 228, 253, 0.728);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* nav[role="navigation"]{
+  display: flex;
+  position: relative!important;
+  height: 100%!important;
+  transform: none;
+  width: 20em;
+  justify-content: center;
+} */
 
 
 /* estilos menu */
@@ -127,6 +186,7 @@ h2{
 } */
 
 a:link { text-decoration:none; } a:visited { text-decoration:none; }
+
 
 nav {
   display: block;

@@ -18,7 +18,7 @@ export class CharacterListComponent implements OnInit {
     next: null,
   };
 
-  private pageNum = 1;
+  public pageNum = 1;
   private query: string = '';
   private hideScrollHeight = 200;
   private showScrollHeight = 500;
@@ -56,6 +56,20 @@ export class CharacterListComponent implements OnInit {
         this.getDataFromService();
       })
   }
+
+  getPage(page: number) {
+    this.pageNum = page;
+    this.getDataFromService();
+    /*this.loading = true;
+    this.asyncMeals = serverCall(this.meals, page).pipe(
+        tap(res => {
+            this.total = res.total;
+            this.p = page;
+            this.loading = false;
+        }),
+        map(res => res.items)
+    );*/
+}
 
   private getDataFromService():void{
     this.characterSvc
