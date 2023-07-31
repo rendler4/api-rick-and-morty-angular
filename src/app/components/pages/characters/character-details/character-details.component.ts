@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Character } from 'src/app/interfaces/character.interface';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { CharacterService } from 'src/app/services/character.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-character-details',
@@ -7,9 +13,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor() { }
+  //character$: Observable<Character>;
+  character$: Observable<any>;
+  //character$: any;
+  constructor(
+    private route:ActivatedRoute,
+    private characterSvc:CharacterService,
+    private location:Location
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.pipe( take(1)).subscribe((params:any)=>{
+      const id = params['id'];
+      this.character$ = this.characterSvc.getDetails(id);
+    });
+  }
+
+  onGoBack(): void{
+    this.location.back();
+    //window.history.back
   }
 
 }
