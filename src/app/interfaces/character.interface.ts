@@ -2,8 +2,9 @@ export interface Character {
   id:number;
   name:string;
   image:string;
-  specie:string;
+  species:string;
   gender:string;
   created:string;
   status:string;
+  episode:[]
 }

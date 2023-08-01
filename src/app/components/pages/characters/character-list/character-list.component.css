@@ -1,0 +1,19 @@
+.line-container {
+  width: 200px;
+  height: 20px;
+}
+.single-line {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-wrap;
+  background-color: white;
+}
+
+.text-danger {
+ background-color: red;
+}
+
+.text-success {
+  background-color: greenyellow;
+}

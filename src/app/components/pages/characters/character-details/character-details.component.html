@@ -1,18 +1,15 @@
 <!-- <p>character-list works!</p> -->
 
 <div class="row" *ngIf="character$ | async as character">
+  {{ console.log(character) }}
   <!-- ALL characters -->
-  <div class="col-xs-12 col-sm-6 col-md-4 justifity-content-center">
-    <div class="card">
-      <div class="container-title-card" >
-      <h2>{{character.name}}</h2>
+  <!-- <div class="col-xs-12 col-sm-6 col-md-4 justifity-content-center">
+    <div class="card iluminate-border">
+      <div class="container-title-card">
+        <h2>{{character.name}}</h2>
       </div>
       <div class="image">
-          <img
-          [src]="character.image"
-          [alt]="character.name"
-          class="card-image-top"
-          />
+        <img [src]="character.image" [alt]="character.name" class="card-image-top" />
       </div>
       <div class="card-inner">
         <div class="header">
@@ -22,10 +19,85 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
   <button (click)="onGoBack()" class="btn btn-dark">
     Back
   </button>
+
+  <div class="card-main-container">
+    <div class="card-container">
+
+      <div class="logo hover-target container-title-card" target="_blank">
+
+        <!-- <img src="https://assets.codepen.io/1462889/fcb.png" alt=""> -->
+
+        <h2 class="">{{ character.name }}</h2>
+
+      </div>
+
+
+
+
+
+      <div class="section full-height over-hide px-4 px-sm-0">
+        <div class="container">
+          <div class="row full-height justify-content-center">
+            <div class="col-lg-10 col-xl-8 align-self-center padding-tb">
+              <div class="section mx-auto text-center slider-height-padding">
+                <input class="checkbox frst" type="radio" id="slide-1" name="slider" checked />
+                <label for="slide-1">
+
+                </label>
+
+                <input class="checkbox scnd" type="radio" name="slider" id="slider-2" />
+                <label for="slider-2"></label>
+                <input class="checkbox thrd" type="radio" name="slider" id="slider-3" />
+                <label for="slider-3"></label>
+                <input class="checkbox foth" type="radio" name="slider" id="slider-4" />
+                <label for="slider-4"></label>
+                <ul>
+
+                  <li style="background-image: url('{{ character.image }}');"></li>
+
+                  <li class="p-1" style="background-image: none;padding:2em;">
+
+                      <div class="single-line text-justify"><small >id: {{ character.id }}</small></div>
+                      <div class="single-line text-justify"><small >Created: {{ character.created | date }}</small></div>
+                      <div class="single-line text-justify"><small >Genero: {{ character.gender }}</small></div>
+                      <div class="single-line text-justify"><small >Specie: {{ character.species }}</small></div>
+                      <div class="single-line text-justify"><small >Number episode: {{ character.episode.length }}</small></div>
+                      <div class="single-line text-justify {{ character.status === 'alive' ? 'text-primary' : 'text-danger' }} "><small >status: {{ character.status }}</small></div>
+
+                      <div class="single-line text-justify"><small >type: {{ character.type === ''? 'Unassigned': character.type}}</small></div>
+
+                  </li>
+
+                  <li class="p-1" style="background-image: none;padding:2em">
+                      <div class="single-line text-justify"><small >character: {{ character.url }}</small></div>
+                      <div class="single-line text-justify"><small >location: {{ character.location.name }}</small></div>
+                      <div class="single-line text-justify"><small >url location: {{ character.location.url }}</small></div>
+                      <div class="single-line text-justify"><small >url character: {{ character.url }}</small></div>
+                      <div class="single-line text-justify"><small >name origin: {{ character.origin.name  }}</small></div>
+                      <div class="single-line text-justify"><small >url origin: {{ character.origin.url  }}</small></div>
+                  </li>
+
+                  <li class="p-1" style="background-image: none;">
+                    <div data-simplebar="" style="max-height:400px;overflow-x:hidden">
+                    <div *ngFor="let episode of character.episode">
+                      <div class="single-line text-center"><small >episode: {{ episode }}</small></div>
+                    </div>
+                  </div>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </div>

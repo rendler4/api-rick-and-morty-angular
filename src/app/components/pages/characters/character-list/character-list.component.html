@@ -6,7 +6,7 @@
     <div class="card">
       <a [routerLink]="['/character-details', character.id]">
         <div class="container-title-card">
-          <h2 style="color: white!important;">{{character.name}}</h2>
+          <h2 style="color: white!important;">{{character.name.slice(0, 18)}}</h2>
         </div>
 
         <div class="image">
@@ -14,9 +14,14 @@
         </div>
 
         <div class="card-inner">
-          <div class="header">
-            <h4 class="text-muted">{{ character.gender }}</h4>
-            <small class="text-muted">{{ character.created | date }}</small>
+          <div class="header ">
+            <!-- <h4 class="text-muted">{{ character.gender }}</h4>
+            <small class="text-muted">{{ character.created | date }}</small> -->
+            <div class="single-line text-center"><small >{{ character.gender }}</small></div>
+            <div class="single-line text-center"><small >{{ character.created | date }}</small></div>
+            <div class="single-line text-center"><small >{{ character.species }}</small></div>
+            <div class="single-line text-center {{ character.status === 'alive' ? 'text-primary' : 'text-danger' }} "><small >{{ character.status }}</small></div>
+
           </div>
         </div>
       </a>

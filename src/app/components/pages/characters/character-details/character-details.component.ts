@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./character-details.component.css']
 })
 export class CharacterDetailsComponent implements OnInit {
-
+  console = console;
   //character$: Observable<Character>;
   character$: Observable<any>;
   //character$: any;
