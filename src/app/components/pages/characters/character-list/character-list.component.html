@@ -1,46 +1,28 @@
-<!-- <p>character-list works!</p> -->
-
 <div class="row-container-character-list">
-  <!-- ALL characters -->
-  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters | paginate: { itemsPerPage: 20, currentPage: pageNum, totalItems: 826}">
+  <div class="" *ngFor="let character of characters | paginate: { itemsPerPage: 20, currentPage: pageNum, totalItems: 826}">
     <div class="card">
       <a [routerLink]="['/character-details', character.id]">
         <div class="container-title-card">
           <h2 style="color: white!important;">{{character.name.slice(0, 18)}}</h2>
         </div>
-
         <div class="image">
           <img [src]="character.image" [alt]="character.name" class="card-image-top" />
         </div>
-
         <div class="card-inner">
           <div class="header ">
-            <!-- <h4 class="text-muted">{{ character.gender }}</h4>
-            <small class="text-muted">{{ character.created | date }}</small> -->
             <div class="single-line text-center"><small >{{ character.gender }}</small></div>
             <div class="single-line text-center"><small >{{ character.created | date }}</small></div>
             <div class="single-line text-center"><small >{{ character.species }}</small></div>
-            <div class="single-line text-center {{ character.status === 'alive' ? 'text-primary' : 'text-danger' }} "><small >{{ character.status }}</small></div>
-
+            <div class="single-line text-center {{ character.status === 'Alive' ? 'text-success' : (character.status === 'Dead'? 'text-danger':'text-secundary') }} "><small >{{ character.status }}</small></div>
           </div>
         </div>
       </a>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-5 container-notFound" *ngIf="characters.length < 1">
+  <div class="container-notFound" *ngIf="characters.length < 1">
     <p>No results...</p>
   </div>
-
-<!-- <div class="justifity-content-center row-container-character-list" style="margin-top: 2em;"> -->
-  <!-- <pagination-controls (pageChange)="pageNum = $event" [maxSize]=826 [responsive]="true"  previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls> -->
-  <!-- <pagination-controls (pageChange)="getPage($event)" [maxSize]=826 [responsive]="true"  previousLabel="Anterior"  nextLabel="Siguiente"></pagination-controls> -->
-
-<!-- </div> -->
-  <!-- <button class="btn btn-dark">
-    GO UP
-  </button> -->
 </div>
-
 
 <div class="" style="position: relative; float: right; margin: 2em;">
   <pagination-template #p="paginationApi"
@@ -49,7 +31,6 @@
         <li class="pagination-previous pagination-options-xtreme" [class.disabled]="p.isFirstPage()">
         <a *ngIf="!p.isFirstPage()" (click)="p.previous()"> <<< Anterior </a>
         </li>
-
         <li class="" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
         <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
         <span class="">{{ page.label }}</span>
@@ -58,13 +39,9 @@
         <span>{{ page.label }}</span>
         </div>
         </li>
-
         <li class="pagination-next pagination-options-xtreme" [class.disabled]="p.isLastPage()">
         <a style="color:white" *ngIf="!p.isLastPage()" (click)="p.next()"> Siguiente >>> </a>
         </li>
       </ul>
-
     </pagination-template>
 </div>
-
-

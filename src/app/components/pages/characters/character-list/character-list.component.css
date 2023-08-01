@@ -12,8 +12,14 @@
 
 .text-danger {
  background-color: red;
+ color: white;
 }
 
 .text-success {
   background-color: greenyellow;
+}
+
+.text-secundary{
+  background-color: rgba(113, 40, 78, 0.486);
+  color: white;
 }

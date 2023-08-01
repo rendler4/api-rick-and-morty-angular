@@ -22,6 +22,12 @@ export class FormSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public campoFilter:string = ''
+
+  onSelectedCampoFilter(){
+
+  }
+
   onSearch(value: string){
     //TODO
     console.log('Buscar ->', value);
